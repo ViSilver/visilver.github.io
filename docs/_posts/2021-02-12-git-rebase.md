@@ -7,6 +7,15 @@ categories: git, git-rebase
 
 # Rebase tutorial
 
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
 ## Notions to operate with
 
 - `master` branch: the branch where the stable code lies. Usually nobody should be able to directly push to master.

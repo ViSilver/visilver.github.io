@@ -1,9 +1,21 @@
 ---
 layout: post
-title:  "Setting up a private Docker registry used by a Raspberry Pi k3s cluster"
+title:  "Raspberry Pi k3s cluster"
 date:   2021-02-07 16:14:21 +0300
 categories: k3s
 ---
+
+# Setting up a private Docker registry used by a Raspberry Pi k3s cluster
+
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
 
 We are going to setup a private Docker registry and generate a self-signed certificate that will be used to authenticate to the registry.
 
