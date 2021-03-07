@@ -37,6 +37,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
+color_scheme: nav
 paginate: 5
 search_enabled: true
 search:

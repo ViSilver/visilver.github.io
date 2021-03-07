@@ -1,0 +1,29 @@
+.side-bar {
+
+    @include mq(md) {
+        flex-wrap: nowrap;
+        position: fixed;
+        width: $nav-width-md;
+        height: 100%;
+        flex-direction: column;
+        border-right: $border $border-color;
+        align-items: flex-end;
+    }
+
+    @include mq(lg) {
+        width: calc((100% - #{$content-width}) / 2);
+        min-width: $nav-width;
+    }
+}
+
+.main {
+    @include mq(md) {
+      position: relative;
+      max-width: $content-width;
+      margin-left: $nav-width-md;
+    }
+  
+    @include mq(lg) {
+      margin-left: max(#{calc((100% - #{$content-width}) / 2)}, #{$nav-width});
+    }
+  }

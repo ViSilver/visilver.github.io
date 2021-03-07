@@ -2,7 +2,7 @@
 layout: post
 title:  "A git branching strategy for concurrently contributing to a git project"
 date:   2021-02-12 14:24 +0300
-categories: git git-rebase
+categories: git, git-rebase
 ---
 
 # Rebase tutorial
