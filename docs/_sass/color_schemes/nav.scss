@@ -6,3 +6,11 @@ $nav-width-md: calc(#{$nav-width} - 24px);
 $content-width: 900px;
 
 $search-results-width: $content-width;
+
+// $selection-text-color: $white;
+// $selection-background-color: $link-color;
+
+::selection {
+    color: $white;
+    background: $link-color;
+  }

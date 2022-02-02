@@ -227,11 +227,13 @@ sudo docker pull pi-reg:444/med/flask-rest
 ```
 
 > NOTE: If the certificate is creating without passing the `subjectAltName`, then `k3s`'s `containerd` will complain with:
+
 ```bash
 FATA[2021-02-01T22:03:25.974609779+02:00] pulling image: rpc error: code = Unknown desc = failed to pull and unpack image "openmpi-reg:444/med/flask-rest:latest": failed to resolve reference "pi-reg:444/med/flask-rest:latest": failed to do request: Head "https://pi-reg:444/v2/flask-rest/manifests/latest": x509: certificate relies on legacy Common Name field, use SANs or temporarily enable Common Name matching with GODEBUG=x509ignoreCN=0
 ```
 
 >NOTE: When `containerd` is used, a success pull message should be displayed:
+
 ```bash
 $ sudo k3s crictl pull pi-reg:444/flask-rest
 Image is up to date for sha256:f7527e63e7585640724c3961c684bd0e83ad5dbed37e5e1c6d4d6a3bea5c9964

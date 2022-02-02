@@ -27,3 +27,12 @@
       margin-left: max(#{calc((100% - #{$content-width}) / 2)}, #{$nav-width});
     }
   }
+
+.search-input {
+   color: $body-text-color;
+} 
+
+::selection {
+  color: $white;
+  background: $grey-dk-000;
+}
