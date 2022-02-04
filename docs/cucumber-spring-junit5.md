@@ -11,7 +11,7 @@ categories: java, cucumber-java, junit5, spring-boot
   <summary>
     Table of contents
   </summary>
-  {: .text-delta }
+  {:no_toc .text-delta }
 1. TOC
 {:toc}
 </details>
