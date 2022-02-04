@@ -6,6 +6,7 @@ categories: java, cucumber-java, junit5, spring-boot
 ---
 
 # Configuring a Java test framework using Cucumber 7, Junit 5, and Spring Boot 
+{:no_toc}
 
 <details open markdown="block">
   <summary>
