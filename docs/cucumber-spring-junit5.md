@@ -7,6 +7,15 @@ categories: java, cucumber-java, junit5, spring-boot
 
 # Configuring a Java test framework using Cucumber 7, Junit 5, and Spring Boot 
 
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
 First of all, I would like to thank [Palash](https://palashray.com/author/bonophulo/) that inspired me for this post and provided an 
 MVP of Spring + Cucumber + Junit5 which works (see [here](https://palashray.com/example-of-creating-cucumber-based-bdd-tests-using-junit5-and-spring-dependency-injection/) the original post).
 
