@@ -5,7 +5,7 @@ date:   2022-02-02 22:14:21 +0300
 categories: java, cucumber-java, junit5, spring-boot
 ---
 
-# Configuring a Java test framework using Cucumber 7, Junit 5, and Spring Boot 
+# Configuring a Java Test Framework Using Cucumber 7, Junit 5, and Spring Boot 
 
 <details open markdown="block">
   <summary>
@@ -19,7 +19,7 @@ categories: java, cucumber-java, junit5, spring-boot
 First of all, I would like to thank [Palash](https://palashray.com/author/bonophulo/) that inspired me for this post and provided an 
 MVP of Spring + Cucumber + Junit5 which works (see [here](https://palashray.com/example-of-creating-cucumber-based-bdd-tests-using-junit5-and-spring-dependency-injection/) the original post).
 
-## Dependencies and POM configuration
+## Dependencies and POM Configuration
 
 Starting from Cucumber 7, the development team introduced a BOM which makes the dependencies management easier. 
 So did the Junit development team.
@@ -154,7 +154,7 @@ In case the configuration of your project is split across several packages and y
 The `@SelectClasspathResource("bdd")` annotation tells Cucumber to look for the feature files under *"classpath:bdd/"* folder or *"src/test/resources/bdd/"*.
 Additional configuration parameters can be passed to Junit using `@ConfigurationParameter`.
 
-## Spring integration
+## Spring Integration Configuration
 
 Our next step would be to tie the Spring context to our Cucumber test context. 
 We can achieve this by combining the `@CucumberContextConfiguration` with our Spring test configuration.
@@ -252,7 +252,7 @@ Having the above step definition, we may create the `src/test/resources/bdd/acce
 ```gherkin
 Feature: Test our service's rest endpoints
 
-  Background:
+  Background: The application is reachable and healthy
     Given The application is available at "http://localhost:8080"
     And Health check is fine at "/actuator/health"
 
@@ -265,6 +265,6 @@ Feature: Test our service's rest endpoints
 
 ## References
 
-1. Example of creating Cucumber based BDD tests using JUnit5 and Spring Dependency Injection, [https://palashray.com/example-of-creating-cucumber-based-bdd-tests-using-junit5-and-spring-dependency-injection/](https://palashray.com/example-of-creating-cucumber-based-bdd-tests-using-junit5-and-spring-dependency-injection/)
+1. Example of creating Cucumber based BDD tests using JUnit5 and Spring Dependency Injection, [https://palashray.com/example-of-creating-cucumber-based-bdd-tests-using-junit5-and-spring-dependency-injection/](https://palashray.com/example-of-creating-cucumber-based-bdd-tests-using-junit5-and-spring-dependency-injection/){: .word-wrap }
 2. Cucumber Spring, [https://github.com/cucumber/cucumber-jvm/tree/main/spring](https://github.com/cucumber/cucumber-jvm/tree/main/spring)
 3. Cucumber JUnit Platform Engine, [https://github.com/cucumber/cucumber-jvm/tree/main/junit-platform-engine](https://github.com/cucumber/cucumber-jvm/tree/main/junit-platform-engine)

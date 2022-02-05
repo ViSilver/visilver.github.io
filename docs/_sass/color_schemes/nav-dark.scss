@@ -19,11 +19,3 @@ $feedback-color: darken($sidebar-color, 3%);
 
 $link-color: $grey-lt-100;
 
-// $selection-text-color: $white;
-// $selection-background-color: $grey-lt-200;
-
-::selection {
-    color: $white;
-    background: $grey-dk-000;
-  }
-

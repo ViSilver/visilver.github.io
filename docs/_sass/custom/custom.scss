@@ -36,3 +36,8 @@
   color: $white;
   background: $grey-dk-000;
 }
+
+a.word-wrap {
+  white-space: unset;
+  word-wrap: break-word;
+}

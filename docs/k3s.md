@@ -5,13 +5,14 @@ date:   2021-02-07 16:14:21 +0300
 categories: k3s
 ---
 
-# Setting up a private Docker registry used by a Raspberry Pi k3s cluster
+# Setting Up a Private Docker Registry Used by a Raspberry Pi k3s Cluster
+{: .no_toc}
 
 <details open markdown="block">
   <summary>
     Table of contents
   </summary>
-  {:no_toc .text-delta }
+  {: .no_toc .text-delta }
 1. TOC
 {:toc}
 </details>
@@ -19,7 +20,7 @@ categories: k3s
 
 We are going to setup a private Docker registry and generate a self-signed certificate that will be used to authenticate to the registry.
 
-## Certificate for accessing the registry using TLS
+## Certificate for Accessing the Registry Using TLS
 
 We will create a folder in the `/home/pi/` directory of our Raspberry Pi and will generate our keys and certificates.
 This is just a testing environment and a prototype.
@@ -73,7 +74,7 @@ Perform the same operation (daemon reloading and restarting Docker service) on a
 
 Since on the local development environment there is no DNS configured, edit the `/etc/hosts` file and add an entry for `pi-reg` domain to point to the host machine of the private docker registry (`127.0.0.1` - in the case the registry runs on current machine, `<ip-of-the host>` - otherwise).
 
-## Private registry setup
+## Private Registry Setup
 
 Create a local directory for persisting the custom images:
 ```bash
@@ -169,7 +170,7 @@ $ sudo nano /etc/systemd/system/docker.service.d/proxy.conf
 $ sudo systemctl show --property=Environment docker
 ```
 
-## Private Registry. K3S usage
+## Private Registry. K3S Usage
 
 We need `k3s` OCI runtime to be able to access our private registries. For this, we have to edit `/etc/rancher/k3s/registries.yaml` on **every agent and master node**.
 
@@ -226,13 +227,13 @@ Test that `docker` can pull the image from the private docker repository:
 sudo docker pull pi-reg:444/med/flask-rest
 ```
 
-> NOTE: If the certificate is creating without passing the `subjectAltName`, then `k3s`'s `containerd` will complain with:
+> **NOTE**: If the certificate is creating without passing the `subjectAltName`, then `k3s`'s `containerd` will complain with:
 
 ```bash
 FATA[2021-02-01T22:03:25.974609779+02:00] pulling image: rpc error: code = Unknown desc = failed to pull and unpack image "openmpi-reg:444/med/flask-rest:latest": failed to resolve reference "pi-reg:444/med/flask-rest:latest": failed to do request: Head "https://pi-reg:444/v2/flask-rest/manifests/latest": x509: certificate relies on legacy Common Name field, use SANs or temporarily enable Common Name matching with GODEBUG=x509ignoreCN=0
 ```
 
->NOTE: When `containerd` is used, a success pull message should be displayed:
+> **NOTE**: When `containerd` is used, a success pull message should be displayed:
 
 ```bash
 $ sudo k3s crictl pull pi-reg:444/flask-rest
