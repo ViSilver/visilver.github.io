@@ -388,7 +388,19 @@ In order to configure the Cucumber pretty output when running the tests using Ma
 
 More about Cucumber properties you can read [here](https://github.com/cucumber/cucumber-jvm/tree/main/junit-platform-engine#configuration-options).
 
-More about Maven Surfire plugin configuration you can read [here](https://maven.apache.org/surefire/maven-surefire-plugin/examples/junit-platform.html).
+More about Maven Surefire plugin configuration you can read [here](https://maven.apache.org/surefire/maven-surefire-plugin/examples/junit-platform.html).
+
+## Disadvantages of the Proposed Model
+
+One disadvantage of the proposed model is the inconvenience to run a scenario from IntelliJ IDEA.
+Given that we have installed the `Cucumber Java` plugin for IntelliJ, when we try to run the `Open and close a connection to database 1-1` scenario from `bdd/profile1/accessibility.feature`, then an exception is thrown stating that we have multiple classes which configure the Spring context.
+This is happening because the `Cucumber Java` plugin is auto-magically setting up the `GLUE` path for our project. 
+Cucumber expects only one test framework setup per project (at least the plugin expects it) so in order to glue the right classes the plugin scans for all the classes annotated with `@CucumberContextConfiguration` and adds them to `GLUE` path.
+Thus, the test fails to start because we have multiple Spring contexts configured by multiple classes.
+
+The solution for this, or rather inconvenience, is to edit the IntelliJ "Run configuration" and to delete the undesired packages from `Glue` input field.
+After this, rerun the scenario and it will pick the right context configuration.
+Check [here](https://www.jetbrains.com/help/idea/run-debug-configuration.html) how to edit the run configuration in IntelliJ.
 
 ## References
 1. Cucumber Spring, [https://github.com/cucumber/cucumber-jvm/tree/main/spring](https://github.com/cucumber/cucumber-jvm/tree/main/spring)
@@ -397,3 +409,4 @@ More about Maven Surfire plugin configuration you can read [here](https://maven.
 4. Cucumber Tags, [https://cucumber.io/docs/cucumber/api/?sbsearch=junit%205#tags](https://cucumber.io/docs/cucumber/api/?sbsearch=junit%205#tags)
 5. Cucumber Configuration Options, [https://github.com/cucumber/cucumber-jvm/tree/main/junit-platform-engine#configuration-options](https://github.com/cucumber/cucumber-jvm/tree/main/junit-platform-engine#configuration-options)
 6. Maven Surfire JUnit 5, Configuration Parameters, [https://maven.apache.org/surefire/maven-surefire-plugin/examples/junit-platform.html](https://maven.apache.org/surefire/maven-surefire-plugin/examples/junit-platform.html)
+7. Edit "Run configuration" in IntelliJ IDEA, [https://www.jetbrains.com/help/idea/run-debug-configuration.html](https://www.jetbrains.com/help/idea/run-debug-configuration.html)
