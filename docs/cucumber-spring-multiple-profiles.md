@@ -365,7 +365,7 @@ The entire project file structure is as follows:
             └── log4j2.xml
 ```
 
-## (Bonus) Maven Surfire Plugin Options
+## (Bonus) Maven Surefire Plugin Options
 
 In order to configure the Cucumber pretty output when running the tests using Maven, here there are some options that might be handy:
 ```xml
